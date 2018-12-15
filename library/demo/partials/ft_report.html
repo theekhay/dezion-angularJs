@@ -1,0 +1,87 @@
+ <div class="row">
+      <div class="col-sm-16">
+         <div class="card">
+
+            <div class="card-header">
+               <h5 class="card-title  pull-left">Monthly Count<small> {{quarterName}}</small></h5>
+               <ul class="nav nav-pills card-header-pills">
+                  <li class="nav-item">
+                     <button class="btn btn-sm btn-link btn-round" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-chevron-down"></i></button>
+                     <div class="dropdown-menu">
+                        <a class="dropdown-item" href="javascript:" 
+                           ng-class="{disabled: customSelection}"
+                           ng-click="customSelection || updatePeriod('full')">Full Year</a>
+
+                        <a class="dropdown-item" href="javascript:" 
+                           ng-class="{disabled: customSelection}" 
+                           ng-click="customSelection || updatePeriod('current')">This Quarter</a>
+
+                        <a class="dropdown-item" href="javascript:" 
+                           ng-class="{disabled: customSelection}" 
+                           ng-click="customSelection || updatePeriod('previous')">Last Quarter</a>
+
+                        <div class="dropdown-divider"></div>
+
+                        <a class="dropdown-item" href="javascript:" 
+                           ng-class="{disabled: customSelection}" 
+                           ng-click="customSelection || updatePeriod('1')">1st Quarter</a> 
+
+                        <a class="dropdown-item" href="javascript:" 
+                           ng-class="{disabled: customSelection}" 
+                           ng-click="customSelection || updatePeriod('2')">2nd Quarter</a> 
+
+                        <a class="dropdown-item" href="javascript:" 
+                           ng-class="{disabled: customSelection}" 
+                           ng-click="customSelection || updatePeriod('3')">3rd Quarter</a> 
+
+                        <a class="dropdown-item" href="javascript:" 
+                           ng-class="{disabled: customSelection}" 
+                           ng-click="customSelection || updatePeriod('4')">4th Quarter</a> 
+
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="javascript:" ng-class="{disabled: true}" >custom Query</a>
+
+                     </div>&nbsp;
+                  </li>
+
+                  <ul class="nav nav-pills card-header-pills pull-right">
+
+                     <li class="nav-item"><datepicker date-format="yyyy-MM-dd" ng-show="customSelection" >
+                           <input   class="form-control" 
+                                   type="date" placeholder="start date" 
+                                   id="service_date" 
+                                   ng-model='custom_select.start_date'
+                                   required readonly style="background-color: transparent;" />
+                        </datepicker></li>&nbsp;
+
+                     <li class="nav-item"><datepicker date-format="yyyy-MM-dd" ng-show="customSelection">
+                           <input   class="form-control" 
+                                   type="date" placeholder="end date" 
+                                   id="service_date" 
+                                   ng-model='custom_select.end_date'
+                                   required readonly style="background-color: transparent;" />
+                        </datepicker></li>
+                     <li class="nav-item">
+                        <button title="toggle between graphical and tabular view" class="btn btn-sm btn-outline-success btn-round"><i class="fa fa-print"></i> <span class="text" ng-click='switchView()'>Switch View</span></button>
+                     </li>
+                  </ul>
+               </ul>
+            </div>
+
+            <div class="card-block">
+                <div  fusioncharts 
+                     type="{{type}}"  
+                     width="{{width}}"
+                     height="{{height}}"
+                     dataFormat="{{json}}" 
+                     chart="{{attrs}}"
+                     categories="{{categories}}"
+                     dataset="{{dataset}}">
+                                
+               </div>
+            </div>
+
+            <div class="card-footer"></div>
+         </div>
+      </div>
+   </div>

@@ -1,0 +1,46 @@
+
+
+
+<div class="col hidden-md-down  pb-2" style="max-height:800px; overflow-y:auto">
+    <div class="options-mail">
+      <ul class="nav nav-pills pull-left">
+        <li class="nav-item">
+          <button class="btn btn-sm btn-link " ><i class="fa fa-reply"></i> Reply</button>
+        </li>
+        <li class="nav-item">
+          <button class="btn btn-sm btn-link " ><i class="fa fa-reply-all"></i> Reply All</button>
+        </li>
+
+        <li class="nav-item">
+          <button class="btn btn-sm btn-link " ><i class="fa fa-trash"></i> Delete</button>
+        </li>
+      </ul>
+      <ul class="nav nav-pills pull-right">
+        <li class="nav-item">
+          <button class="btn btn-sm btn-outline-primary " ><i class="fa fa-chevron-left"></i></button>
+        </li>
+        <li class="nav-item">
+          <button class="btn btn-sm btn-outline-primary ml-2"><i class="fa fa-chevron-right"></i></button>
+        </li>
+      </ul>
+    </div>
+    <div class="clearfix"></div>
+    <h3 class="mt-2">{{message.title}}</h3>
+    <div class="list-unstyled comment-list">
+      <div class="media "> <span class="message_userpic"><img class="d-flex mr-3" src="./library/demo/admin/css/images/user-header.png" alt="Generic user image"> <span class="user-status bg-success "></span></span>
+        <div class="media-body">
+          <h6 class="mt-0 mb-1">Temitayo<small class="pull-right">{{message.date_time}}</small></h6>
+          <p class="description mb-0">{{message.sender}}</p>
+        </div>
+      </div>
+    </div>
+    <!-- <hr > -->
+    <p>{{message.body}}</p>
+   
+    <br>
+    <hr>
+    <h2 class="page_subtitles">Quick Reply <small><a href="#" class="pull-right">More options</a></small></h2>
+    <textarea class="form-control dark-input" rows="4" placeholder="Write your message here"></textarea>
+    <br>
+    <button class="btn btn-primary">Send</button>
+</div>

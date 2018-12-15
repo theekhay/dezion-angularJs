@@ -1,0 +1,163 @@
+
+<style type="text/css">
+	
+	.modal-content{
+		/*overflow-y: scroll;*/
+	}
+</style>
+
+<div class="container-fluid  "  ng-controller="rhemaController">
+ 
+	<div class="row">
+		<div class="col-sm-12">
+			<p><h3>First Timer Details</h3></p>
+		</div>
+	</div>
+
+	<!-- first time -->
+	<div class="row form-group">
+		<label class="col-sm-4 col-form-label ">First Time </label> 
+		<div class="col-sm-6">{{testi.service_date | date : 'dd MMM, yyyy'}}</div>	
+	</div>
+
+
+	<!-- Service Attended -->
+	<div class="row form-group" ng-show="testi.service_id != null">
+		<label class="col-sm-4 col-form-label ">Service Attended </label> 
+		<div class="col-sm-6">{{testi.service_id }}</div>	
+	</div>
+
+	<!-- full name -->
+	<div class="row form-group">
+		<label class="col-sm-4 col-form-label ">Name</label>
+		<div class="col-sm-6">{{testi.surname +" "+ testi.firstname}}</div>
+	</div>
+
+
+	<!-- Phone number  -->
+	<div class="row form-group">
+		<label class="col-sm-4 col-form-label ">Phone Number</label> 
+		<div class="col-sm-6">{{testi.telephone1 }}</div>
+		
+	</div>
+
+	<!--First timers address -->
+	<div class="row form-group">
+		<label class="col-sm-4 col-form-label ">Address</label> 
+		<div class="col-sm-6">{{testi.address }}</div>	
+	</div>
+
+<hr >
+
+	<!--First timers call information -->
+	<div class="row form-group" ng-show="testi.call_status == 1">
+		<label class="col-sm-4 col-form-label ">Call Agent</label> 
+		<div class="col-sm-6">{{testi.call_agent }}</div>	
+	</div>
+
+	<div class="row form-group" ng-show="testi.call_status == 1">
+		<label class="col-sm-4 col-form-label ">Call Date</label>
+		<div class="col-sm-6">{{testi.call_date }}</div>	
+	</div>
+<hr>
+
+	<!-- Next step  -->
+	<div class="row form-group">
+		<label class="col-sm-4 col-form-label ">Next Step</label> 
+		<div class="col-sm-6" >{{testi.next_step }}</div>	
+	</div>
+
+
+	<div class="form-group row">
+		<label class="col-sm-4 col-form-label ">Status</label> 
+		<div class="col-sm-6" ng-if="testi.prospective === null" >Unknown</div>
+		<div class="col-sm-6" ng-if="testi.prospective == 1" >Prospective</div>
+		<div class="col-sm-6" ng-if="testi.prospective == 0" >Visitor</div>
+		<div class="col-sm-6" ng-if="testi.prospective == 2" >Undecided</div>
+			
+	</div>
+
+
+	<hr>
+
+	<!-- <h2>Request the following from the first timer</h2> -->
+
+
+	<!-- First timer call status-->
+	<div class="form-group row" ng-show="testi.prospective == null" ng-show="testi.call_status== false ">
+     	<label for="abbr" class="col-sm-4 col-form-label">Call Status</label>
+     	<div class="col-sm-12">
+
+	        <label for="successful">Successful</label> <input type="radio" name="call_status" ng-value='1' id="successful" ng-model='testi.uw.call_status'>
+
+	        <label for="unreachable">Unreachable</label> <input type="radio" name="call_status" ng-value='unreachable' id="unreachable" ng-model='testi.uw.call_status'>
+
+	        <label for="unanswered">Unanswered</label> <input type="radio" name="call_status" ng-value='unanswered' id="unanswered" ng-model='testi.uw.call_status'>
+
+	        <label for="others">Others</label> <input type="radio" name="call_status" ng-value='others' id="others" ng-model='testi.uw.call_status'>
+     	</div>
+  	</div>
+
+
+  	<!-- show this only if the first timer was called sucessfully -->
+  	<div ng-show="testi.uw.call_status == 1">
+
+		<div class="form-group row" ng-controller="manageServiceController" ng-show="testi.service_id == null">
+	     	<label for="abbr" class="col-sm-4 col-form-label">Service</label>
+	     	<div class="col-sm-12">
+		        <select  class="custom-select form-control" 
+		                id="service" name="service" 
+		                ng-model='testi.uw.service_id'
+		                ng-options = "z.id as z.name for z in services"
+		                style="border: 1px solid rgba(0, 0, 0, 0.25);color: rgba(0, 0, 0, 0.72);" 
+		                required >
+		                <option value="">Select Service</option>
+		        </select>
+	     	</div>
+	  	</div>
+
+
+	  	<div class="form-group row" ng-show="testi.prospective == null">
+	     	<label for="abbr" class="col-sm-4 col-form-label">Status</label>
+	     	<div class="col-sm-12">
+		        <label for="prospective">Propspective</label> <input type="radio" name="status" ng-value='1' id="prospective" ng-model='testi.uw.prospective'>
+		        <label for="visitor">Visitor</label> <input type="radio" name="status" ng-value='0' id="visitor" ng-model='testi.uw.prospective'>
+		        <label for="undecided">Undecided</label> <input type="radio" name="status" ng-value='2' id="undecided" ng-model='testi.uw.prospective'>
+	     	</div>
+	  	</div>
+
+	  	<!-- show this only if the first timer is prospective -->
+	  	<div ng-show="testi.uw.prospective == 1" >
+
+	  		<div class="form-group row" ng-show="testi.prospective == null ">
+     			<label for="abbr" class="col-sm-4 col-form-label">Interests</label>
+     			<div class="col-sm-12">
+
+	        		<label for="toCell">Join Cell</label> <input type="checkbox" name="toCell" ng-value='1' id="toCell" ng-model='testi.interests.toCell'>
+
+	        		<label for="toDepartment">Join Department</label> <input type="checkbox" name="toDepartment" ng-value='1' id="toDepartment" ng-model='testi.interests.toDepartment'>
+
+	        		<select  class="form-control" ng-show="testi.interests.toDepartment==true" ng-controller="departmentListController"
+		                id="service" name="service" 
+		                ng-model='testi.interests.department'
+		                ng-options = "z.id as z.name for z in departments"
+		                style="border: 1px solid rgba(0, 0, 0, 0.25);color: rgba(0, 0, 0, 0.72);" 
+		                required >
+		                <option value="">Select Department</option>
+		        	</select
+     			</div>
+  			</div>
+	  	</div>
+
+  		<hr>
+  	</div>	
+ 
+</div>
+
+	<div class="">
+    	<button type="button" ng-show="testi.uw.call_status == 1" class="btn btn-outline-primary" ng-click='confirm(1)' >Save</button>&nbsp;&nbsp;
+    	<button type="button" ng-click='closeThisDialog(0)' class="btn btn-outline-danger" >Cancel</button>
+  	</div>
+
+</div>
+

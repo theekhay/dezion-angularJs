@@ -1,0 +1,79 @@
+
+/*UI WIDGETS Service Tabs*/
+.service-tabs {
+  width: 50%;
+  margin: 10px auto 15px auto;
+  background: rgb(37, 45, 71);
+  border: #252d47;
+  color: #fff;
+  padding: 1.25rem;
+}
+.ui-tabs .ui-tabs-panel {
+  display: block;
+  border-width: 0;
+  padding: 1em 1.4em;
+  background: none;
+  color: white;
+}
+.ui-widget-header {
+  border: none !important;
+  background: none;
+  color: #222;
+  font-weight: bold;
+}
+.ui-tabs .ui-tabs-nav {
+  padding: 0; 
+}
+.ui-tabs .ui-tabs-panel {
+  color: #c8d4f9;
+  font-size: 13px;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+.ui-state-default, 
+.ui-widget-content 
+.ui-state-default, 
+.ui-widget-header 
+.ui-state-default {
+  background-image: none;
+  background-color: transparent;
+  border-color: #6c8bef;
+}
+.ui-state-default a, 
+.ui-state-default a:link{
+	color: #6c8bef !important;
+	font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 13px;
+}
+.ui-tabs .ui-tabs-nav li{
+	border-bottom-width: thin;
+	border-radius: 5px;
+}
+.ui-state-active{
+	background: white !important;
+}
+.ui-widget input, 
+.ui-widget select, 
+.ui-widget textarea, 
+.ui-widget button {
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+.tabbed-space, 
+.tabbed-title{
+	margin-top: 20px;
+}
+.centered-form{
+	margin-left: 20%; 
+}
+
+@media only screen and (min-width: 320px) and (max-width: 767px){
+  .service-tabs {
+    width: 100% !important;
+    margin-left: 0 !important;
+  }
+  .service-tabs {
+    padding: 0 !important;
+  }
+  .ui-tabs .ui-tabs-nav{
+    margin-left: 15px;
+  }
+}

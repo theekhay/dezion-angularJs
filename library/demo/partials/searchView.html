@@ -1,0 +1,14 @@
+
+
+<div>
+	<input class='form-control' type='text' placeholder='search Member' ng-model="modelName" /><div  id="member_suggest">
+
+	<ul class="list-group">
+  		<a href='javascript:' ng-repeat="m in members | filter : searchTest" ng-click="selectMember(m)" ><li  class="list-group-item" >{{m.surname + " " + m.firstname}} </li></a>
+
+	</ul>	
+	</div>
+	<input class='form-control' ng-hide="true" type='text' placeholder='search Member' ng-model="modelInfo" />
+	<p ng-show="modelName.length > 3 && searchFound == false && isSelected == false ">No match found</p>
+</div>
+

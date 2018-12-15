@@ -1,0 +1,10 @@
+$(document).ready(function(){
+    $("#adesuzan").click(function(){
+        $(".hide-by-default").show();
+        $(".hide-by-default2").hide();
+    });
+    $("#bill").click(function(){
+        $(".hide-by-default2").show();
+        $(".hide-by-default").hide();
+    });
+ });

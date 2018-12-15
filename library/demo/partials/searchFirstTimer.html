@@ -1,0 +1,14 @@
+
+
+<div>
+	<input class='form-control' type='text' placeholder='search Name or Phone Number' ng-model="search" /><div  id="member_suggest">
+
+	<ul class="list-group">
+  		<a href='javascript:' ng-repeat="m in firsttimers | filter : searchTest " ng-click="select(m)" ><li class="list-group-item" >{{m.surname + " " + m.firstname}} </li></a>
+
+	</ul>	
+	</div>
+	<input class='form-control' ng-hide="true" type='text' placeholder='search Member'  />
+	<p ng-show="search.length > 3 && filterResult == false && selected == null">No match found</p>
+</div>
+

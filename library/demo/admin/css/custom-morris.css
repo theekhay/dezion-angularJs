@@ -1,0 +1,7 @@
+.morris-text-color text{
+   fill: white;
+}
+.dataTables_wrapper label input, 
+.dataTables_wrapper label select{
+	border-radius: 18px;
+}

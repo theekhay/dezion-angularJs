@@ -1,0 +1,76 @@
+/*TWEAKED CSS STARTS HERE*/
+@media only screen and (min-width: 320px) and (max-width: 767px){
+	/*DATABALES*/
+	.dataTables_wrapper .text-right label {
+    display: flex;
+    align-items: center;
+    text-align: right;
+    justify-content: flex-start !important;
+	}
+	i.fa {
+	  font-size: 14px !important;
+	}
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px){
+	/*REGISTER MEMBERS CSS STARTS HERE*/
+	.form-for-card {
+		width: 70% !important;
+	}
+}
+
+/*LEFT SIDEBAR*/
+.nav-item {
+	list-style: none;
+}
+
+
+/* DATATABLES FOR MEMBER LIST*/
+table#dataTables-example .btn .fa {
+  vertical-align: middle;
+  margin-right: 0;
+}
+tr td a.btn.btn-link.btn-sm {
+    background: white;
+}
+span.hidden-sm-down {
+	font-size: 15px;
+}
+
+/*EXPENSE FORM*/
+.expense-custom-file{
+	min-width: 100%;
+}
+/*REGISTER MEMBERS CSS STARTS HERE*/
+.form-for-card {
+	width: 50%;
+}
+
+select#example-text-input {
+	margin: 0 auto;
+}
+
+input#example-text-input::-webkit-input-placeholder,
+input#example-tel-input::-webkit-input-placeholder,
+input#example-number-input::-webkit-input-placeholder,
+input#exampleInputEmail1::-webkit-input-placeholder {
+	color: #c8d4f9;
+}
+button.btn.btn-outline-primary,
+.btn-outline-success {
+	margin: 0 auto;
+}
+.form-group.row .btn-outline-primary {
+  color: #6c8bef;
+  background-color: #fff;
+  border-color: #6c8bef;
+}
+.form-group.row .btn-outline-primary:hover {
+  color: #fff;
+  background-color: #6c8bef;
+  border-color: #6c8bef;
+}
+.hide-by-default, .hide-by-default2{
+	display: none;
+}
+
