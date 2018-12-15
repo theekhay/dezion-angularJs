@@ -102,10 +102,10 @@ $db['default'] = array(
 
 $db['live'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'root', //mozalloc_admin
-	'password' => '', //klZe6k6H36
-	'database' =>  'auth', // mozalloc_test
+	'hostname' => 'us-cdbr-iron-east-05.cleardb.net',
+	'username' => 'ba19443e2bac30', //mozalloc_admin
+	'password' => 'cd273fe0', //klZe6k6H36
+	'database' =>  'heroku_06b32214548fdb2', // mozalloc_test
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
