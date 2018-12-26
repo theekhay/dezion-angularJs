@@ -33,7 +33,7 @@
                     $rs.loggedIn = true;
                     $rs.username = $scope.user.username;
                     $scope.user = {}; //empty the user object.
-                    $window.location.href = 'http://localhost/hv/dashboard#!/dashboard'; //redirect to dashboard.
+                    $window.location.href = 'https://dezion.herokuapp.com/dashboard#!/dashboard'; //redirect to dashboard.
                     //http://dezion.harvestersng.org/dashboard#/dashboard
 
 
